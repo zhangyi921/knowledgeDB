@@ -12,7 +12,7 @@ function App() {
       <header className="App-header">
         <div className={`Drop-zone-${box1State}`}
           onDrop={e => setBox1State('droped')}
-          onDragOver={e => e.preventDefault()}
+          onDragOver={e => e.preventDefault()} // most places are valid drop zone, so it's not allowed to drop by default! PreventDefault so that onDrop works!
           onDragEnter={e => box1State !== 'droped' && setBox1State('entered')}
           onDragLeave={e => box1State !== 'droped' && setBox1State('empty')}></div>
 
