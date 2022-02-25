@@ -17,8 +17,8 @@ Create xbindkeys configuration file
 ```bash
 xbindkeys -d > ~/.xbindkeysrc
 ```
-Now we can edit the config file
-xautomation manual: https://linux.die.net/man/1/xte
+Now we can edit the config file  
+xautomation manual: https://linux.die.net/man/1/xte  
 Example configuration: 
 ```
 "xte 'keydown Control_L' 'key c' 'keyup Control_L'"
