@@ -12,7 +12,8 @@ xev | grep button
 We get: 
  -  forward button is 9
  - backward button is 8
- - middle button is 2
+ - middle button is 2  
+
 Create xbindkeys configuration file
 ```bash
 xbindkeys -d > ~/.xbindkeysrc
