@@ -1,0 +1,32 @@
+import { useState } from 'react'
+import './App.css'
+
+type DropZoneStatus = 'empty' | 'entered' | 'droped'
+
+function App() {
+  const [box1State, setBox1State] = useState<DropZoneStatus>('empty')
+  const [box2State, setBox2State] = useState<DropZoneStatus>('empty')
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <div className={`Drop-zone-${box1State}`}
+          onDrop={e => setBox1State('droped')}
+          onDragOver={e => e.preventDefault()}
+          onDragEnter={e => box1State !== 'droped' && setBox1State('entered')}
+          onDragLeave={e => box1State !== 'droped' && setBox1State('empty')}></div>
+
+        <div className={`Drop-zone-${box2State}`}
+          onDrop={e => setBox2State('droped')}
+          onDragOver={e => e.preventDefault()}
+          onDragEnter={e => box2State !== 'droped' && setBox2State('entered')}
+          onDragLeave={e => box2State !== 'droped' && setBox2State('empty')}></div>
+
+        <div id="123" className='Dragable-object' draggable>Drag me!</div>
+        <button onClick={() => {setBox1State('empty'); setBox2State('empty')}}>Reset</button>
+      </header>
+    </div>
+  )
+}
+
+export default App
